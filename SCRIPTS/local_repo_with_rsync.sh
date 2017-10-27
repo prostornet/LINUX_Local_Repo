@@ -62,7 +62,7 @@ function error()
   { 
     echo `date +%d.%m.%Y%t%H:%M:%S` "    ERROR:" $1 >>${LOGFILE}
     if [ -n "$MAILNOTIFY" ] ; then
-      echo `date +%d.%m.%Y%t%H:%M:%S` "    ERROR:" $1 | mail -s "ERROR while synchronizing openSUSE" $MAILNOTIFY
+      echo `date +%d.%m.%Y%t%H:%M:%S` "    ERROR:" $1 | mail -s "ERROR while synchronizing repo" $MAILNOTIFY
     fi
     echo $1 | grep "Lockfile" >/dev/null
     if [ $? = 1 ] ; then
